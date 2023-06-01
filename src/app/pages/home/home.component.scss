@@ -1,6 +1,22 @@
-div p{
-    color: red;
-    &:hover{
-        color: blue;
-    }
+.body {
+    margin: 0px;
+    padding: 0px;
+    width: 1000%;
+    height:100vh;
+    background-color: yellow;
+    position: relative;
+}
+.center {
+    width: 500px;
+    height: 500px;
+    background-color: palevioletred;
+    position: fixed;
+    top: 10%;
+
+}
+.center div{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: sticky;
 }
