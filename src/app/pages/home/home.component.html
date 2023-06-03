@@ -1,8 +1,68 @@
 
-<div class="body">
-<div class="center">
-    <div>
-        <p>Lorem<br><i>uoo</i> ipsum <br>dolor<br> sit amet <br>consectetur adipisicing elit. </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="produt row">
+            <div class="card col-lg-6 col-md-4 col-sm-12" style="width: 20rem;" *ngFor="let product of products">
+                <img src="assets/images/home/placeimg_640_480_any.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">girls</h5>
+                  <p class="card-text">$1000</p>
+                  <p class="price"></p>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                  <a href="#" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="getProductDetail(product)">Product details</a>
+                </div> 
+              </div>
+        </div>
     </div>
+</body>
+</html>
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">product details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="card mb-3" style="max-width: 540px;" *ngIf="productDetails">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="assets/images/home/placeimg_640_480_any.png" class="img-fluid rounded-start" alt="..."  style="height: 100%;">
+            
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{productDetails.name}}</h5>
+                          <p class="price">${{productDetails.price}}</p>
+                          <p class="card-text">
+                            {{ productDetails.description }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add to cart</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  <!-- Vertically centered modal -->
+
+  
+  
